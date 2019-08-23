@@ -1293,7 +1293,7 @@ kms_player_endpoint_uridecodebin_element_added (GstBin * bin,
               (gst_element_get_factory (element))), RTSPSRC) == 0) {
     g_object_set (G_OBJECT (element),
         "latency", self->priv->network_cache,
-        "drop-on-latency", TRUE,
+        "drop-on-latency", FALSE,
         "port-range", self->priv->port_range,
         NULL);
   }
