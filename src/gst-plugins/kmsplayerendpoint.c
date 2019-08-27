@@ -1297,6 +1297,7 @@ kms_player_endpoint_uridecodebin_element_added (GstBin * bin,
         "port-range", self->priv->port_range,
         NULL);
   }
+    GST_DEBUG ("OXAGILE VERSION, DROP-ON-LATENCY = FALSE");
 }
 
 static gboolean
