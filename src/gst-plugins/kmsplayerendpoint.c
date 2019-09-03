@@ -530,20 +530,19 @@ process_sample (GstAppSink * appsink, GstAppSrc * appsrc, GstSample * sample,
     }
   }
 
-  GST_DEBUG_OBJECT (appsink, "OXAGILE VERSION, DROP-ON-LATENCY = FALSE");
   if (pts_data->last_pts_orig != GST_CLOCK_TIME_NONE) {
     if (pts_orig < pts_data->last_pts_orig) {
       GST_ERROR_OBJECT (appsink,
           "Non incremental original PTS (last original PTS: %"
           GST_TIME_FORMAT ", original PTS: %" GST_TIME_FORMAT
-          ", is preroll: %d). Not pushing",
+          ", is preroll: %d). Not pushing. OXAGILE VERSION, DROP-ON-LATENCY = FALSE",
           GST_TIME_ARGS (pts_data->last_pts_orig), GST_TIME_ARGS (pts_orig),
           is_preroll);
       goto end;
     } else if (pts_orig == pts_data->last_pts_orig) {
       GST_DEBUG_OBJECT (appsink,
           "Original PTS equals last PTS (original PTS: %" GST_TIME_FORMAT
-          ", is preroll: %d). Seems to be already pushed.",
+          ", is preroll: %d). Seems to be already pushed. OXAGILE VERSION, DROP-ON-LATENCY = FALSE",
           GST_TIME_ARGS (pts_orig), is_preroll);
       goto end;
     }
