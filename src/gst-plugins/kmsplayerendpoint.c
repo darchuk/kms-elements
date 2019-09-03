@@ -497,7 +497,7 @@ process_sample (GstAppSink * appsink, GstAppSrc * appsrc, GstSample * sample,
 
   if (is_preroll) {
     GST_DEBUG_OBJECT (appsink, "Preroll: reset base time");
-    GST_DEBUG ("OXAGILE VERSION, DROP-ON-LATENCY = FALSE");
+    GST_DEBUG_OBJECT (appsink, "OXAGILE VERSION, DROP-ON-LATENCY = FALSE");
 
     kms_player_endpoint_reset_base_time (self);
     kms_pts_data_reset (pts_data);
