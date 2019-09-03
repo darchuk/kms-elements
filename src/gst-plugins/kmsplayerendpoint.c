@@ -530,6 +530,7 @@ process_sample (GstAppSink * appsink, GstAppSrc * appsrc, GstSample * sample,
     }
   }
 
+  GST_DEBUG_OBJECT (appsink, "OXAGILE VERSION, DROP-ON-LATENCY = FALSE");
   if (pts_data->last_pts_orig != GST_CLOCK_TIME_NONE) {
     if (pts_orig < pts_data->last_pts_orig) {
       GST_ERROR_OBJECT (appsink,
