@@ -106,7 +106,7 @@ PlayerEndpointImpl::PlayerEndpointImpl (const boost::property_tree::ptree &conf,
   GstElement *element = getGstreamerElement();
 
   g_object_set (G_OBJECT (element), "use-encoded-media", useEncodedMedia,
-                "network-cache", networkCache, NULL);
+                "network-cache", 200000, NULL);
 
   std::string portRange;
   if (getConfigValue <std::string, PlayerEndpoint> (&portRange,
